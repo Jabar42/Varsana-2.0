@@ -6,6 +6,8 @@ const API_URL = "http://localhost:1337/api";
 
 // Define el tipo de los blogs
 interface Blog {
+  Title: Element;
+  Content: any;
   id: number;
   attributes: {
     Title: string;  // Asegúrate de que "title" es el nombre correcto del campo

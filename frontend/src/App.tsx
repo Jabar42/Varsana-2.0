@@ -3,6 +3,11 @@
 import { createResource } from "solid-js";
 import { fetchBlogs } from "./api";  // Asegúrate de que la ruta sea correcta
 
+type Blog = {
+  Title: string;
+  Content: { children: { text: string }[] }[];
+};
+
 const App = () => {
   const [blogs] = createResource(fetchBlogs);
 
@@ -19,7 +24,7 @@ const App = () => {
             <h2 class="text-2xl font-semibold text-indigo-700">{blog.Title}</h2>
             <p class="mt-2 text-gray-700">
               {blog.Content?.map((contentItem, index) => (
-                <span key={index} class="block">{contentItem.children[0]?.text}</span>
+                <span class="block">{contentItem.children[0]?.text}</span>
               ))}
             </p>
           </li>

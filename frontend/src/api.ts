@@ -8,7 +8,7 @@ const API_URL = "http://localhost:1337/api";
 interface Blog {
   id: number;
   attributes: {
-    title: string;  // Asegúrate de que "title" es el nombre correcto del campo
+    Title: string;  // Asegúrate de que "title" es el nombre correcto del campo
   };
 }
 

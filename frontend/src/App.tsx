@@ -1,6 +1,6 @@
 // src/App.tsx
 
-import { createResource } from "solid-js";
+import { createResource, JSX } from "solid-js";
 import { fetchBlogs } from "./api";  // Asegúrate de que la ruta sea correcta
 
 type Blog = {
@@ -23,7 +23,7 @@ const App = () => {
           <li  class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow">
             <h2 class="text-2xl font-semibold text-indigo-700">{blog.Title}</h2>
             <p class="mt-2 text-gray-700">
-              {blog.Content?.map((contentItem, index) => (
+              {blog.Content?.map((contentItem: { children: { text: number | boolean | Node | JSX.ArrayElement | (string & {}); }[]; }, index: any) => (
                 <span class="block">{contentItem.children[0]?.text}</span>
               ))}
             </p>
